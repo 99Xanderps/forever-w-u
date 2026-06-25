@@ -1,0 +1,1407 @@
+/* ===================================================
+   HAPPY BIRTHDAY WEBSITE
+   STYLE.CSS
+   PART 1
+=================================================== */
+
+/* Google Font */
+
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+/* Reset */
+
+*{
+
+margin:0;
+
+padding:0;
+
+box-sizing:border-box;
+
+scroll-behavior:smooth;
+
+}
+
+
+:root{
+
+--bg:#090909;
+
+--bg2:#121212;
+
+--pink:#ff5ea8;
+
+--purple:#8d63ff;
+
+--white:#ffffff;
+
+--text:#d6d6d6;
+
+--glass:rgba(255,255,255,.08);
+
+--shadow:0 10px 35px rgba(255,94,168,.25);
+
+--radius:22px;
+
+}
+
+
+/* Body */
+
+body{
+
+font-family:"Poppins",sans-serif;
+
+background:linear-gradient(
+
+180deg,
+
+#090909,
+
+#101018,
+
+#090909
+
+);
+
+color:white;
+
+overflow-x:hidden;
+
+}
+
+
+/* Scroll */
+
+::-webkit-scrollbar{
+
+width:9px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:var(--pink);
+
+border-radius:20px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#111;
+
+}
+
+
+/* Loader */
+
+#loader{
+
+position:fixed;
+
+inset:0;
+
+background:black;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+z-index:99999;
+
+transition:.8s;
+
+}
+
+#loader h1{
+
+font-family:"Great Vibes";
+
+font-size:58px;
+
+color:var(--pink);
+
+animation:pulse 1.5s infinite;
+
+}
+
+
+/* Stars */
+
+.stars{
+
+position:fixed;
+
+inset:0;
+
+z-index:-2;
+
+background-image:
+
+radial-gradient(white 1px,transparent 1px);
+
+background-size:70px 70px;
+
+opacity:.5;
+
+animation:moveStars 40s linear infinite;
+
+}
+
+
+/* Floating Hearts */
+
+.hearts{
+
+position:fixed;
+
+inset:0;
+
+pointer-events:none;
+
+overflow:hidden;
+
+z-index:-1;
+
+}
+
+.hearts span{
+
+position:absolute;
+
+bottom:-50px;
+
+color:rgba(255,94,168,.35);
+
+animation:floatHeart linear forwards;
+
+}
+
+
+/* Section */
+
+section{
+
+width:min(1200px,92%);
+
+margin:auto;
+
+padding:110px 0;
+
+}
+
+
+/* Intro */
+
+.intro{
+
+height:100vh;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
+
+}
+
+.intro h3{
+
+font-weight:400;
+
+color:#bdbdbd;
+
+letter-spacing:3px;
+
+margin-bottom:15px;
+
+}
+
+.intro h1{
+
+font-family:"Great Vibes";
+
+font-size:92px;
+
+color:var(--pink);
+
+text-shadow:0 0 25px rgba(255,94,168,.6);
+
+margin-bottom:20px;
+
+}
+
+#typing{
+
+max-width:650px;
+
+font-size:20px;
+
+line-height:1.9;
+
+min-height:70px;
+
+color:#ddd;
+
+}
+
+
+/* Button */
+
+button{
+
+border:none;
+
+cursor:pointer;
+
+font-family:"Poppins";
+
+transition:.35s;
+
+}
+
+#giftBtn{
+
+margin-top:45px;
+
+padding:18px 42px;
+
+border-radius:999px;
+
+font-size:18px;
+
+background:linear-gradient(
+
+135deg,
+
+var(--pink),
+
+var(--purple)
+
+);
+
+color:white;
+
+box-shadow:var(--shadow);
+
+}
+
+#giftBtn:hover{
+
+transform:translateY(-5px) scale(1.06);
+
+box-shadow:
+
+0 0 35px rgba(255,94,168,.5);
+
+}
+
+
+/* Gift */
+
+.gift{
+
+text-align:center;
+
+}
+
+.giftBox{
+
+width:220px;
+
+height:220px;
+
+margin:auto;
+
+position:relative;
+
+animation:giftShake 3s infinite;
+
+}
+
+.box{
+
+width:220px;
+
+height:170px;
+
+background:linear-gradient(
+
+135deg,
+
+#ff4f90,
+
+#ff74b6
+
+);
+
+position:absolute;
+
+bottom:0;
+
+border-radius:12px;
+
+}
+
+.lid{
+
+width:235px;
+
+height:45px;
+
+background:#ff8fc2;
+
+position:absolute;
+
+top:0;
+
+left:-7px;
+
+border-radius:10px;
+
+}
+
+.gift h2{
+
+margin-top:40px;
+
+font-family:"Great Vibes";
+
+font-size:48px;
+
+color:var(--pink);
+
+}
+
+
+/* Cake */
+
+.cake{
+
+text-align:center;
+
+}
+
+.cakeContainer{
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+gap:25px;
+
+}
+
+#cake{
+
+font-size:140px;
+
+animation:bounce 2s infinite;
+
+}
+
+#blow{
+
+padding:15px 35px;
+
+border-radius:50px;
+
+background:var(--pink);
+
+color:white;
+
+font-size:17px;
+
+}
+
+#blow:hover{
+
+transform:scale(1.05);
+
+}
+
+
+/* Letter */
+
+.envelope{
+
+max-width:750px;
+
+margin:auto;
+
+padding:40px;
+
+border-radius:22px;
+
+background:var(--glass);
+
+backdrop-filter:blur(20px);
+
+border:1px solid rgba(255,255,255,.08);
+
+box-shadow:var(--shadow);
+
+}
+
+.paper h2{
+
+text-align:center;
+
+font-family:"Great Vibes";
+
+font-size:52px;
+
+margin-bottom:25px;
+
+color:var(--pink);
+
+}
+
+.paper p{
+
+white-space:pre-line;
+
+line-height:2;
+
+color:#e8e8e8;
+
+font-size:17px;
+
+}
+
+ /* ===================================================
+   STYLE.CSS
+   PART 2
+=================================================== */
+
+
+/* ==========================
+   Gallery
+========================== */
+
+.gallery{
+
+text-align:center;
+
+}
+
+.gallery h2{
+
+font-family:"Great Vibes";
+
+font-size:56px;
+
+margin-bottom:50px;
+
+color:var(--pink);
+
+}
+
+.photos{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+gap:25px;
+
+}
+
+.photos img{
+
+width:100%;
+
+height:320px;
+
+object-fit:cover;
+
+border-radius:18px;
+
+cursor:pointer;
+
+transition:.45s;
+
+box-shadow:0 10px 25px rgba(0,0,0,.35);
+
+}
+
+.photos img:hover{
+
+transform:scale(1.05);
+
+box-shadow:0 0 35px rgba(255,94,168,.45);
+
+}
+
+
+/* ==========================
+   Reasons
+========================== */
+
+.reasons h2{
+
+font-family:"Great Vibes";
+
+font-size:55px;
+
+text-align:center;
+
+margin-bottom:45px;
+
+color:var(--pink);
+
+}
+
+.reasons ul{
+
+list-style:none;
+
+max-width:850px;
+
+margin:auto;
+
+display:grid;
+
+gap:18px;
+
+}
+
+.reasons li{
+
+padding:22px;
+
+border-radius:18px;
+
+background:var(--glass);
+
+backdrop-filter:blur(18px);
+
+border-left:5px solid var(--pink);
+
+transition:.35s;
+
+}
+
+.reasons li:hover{
+
+transform:translateX(10px);
+
+box-shadow:0 0 25px rgba(255,94,168,.35);
+
+}
+
+
+/* ==========================
+   Mini Game
+========================== */
+
+.game{
+
+text-align:center;
+
+}
+
+.game h2{
+
+font-family:"Great Vibes";
+
+font-size:58px;
+
+color:var(--pink);
+
+margin-bottom:25px;
+
+}
+
+.game p{
+
+font-size:22px;
+
+margin-bottom:25px;
+
+}
+
+#heartGame{
+
+width:95px;
+
+height:95px;
+
+margin:auto;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:48px;
+
+border-radius:50%;
+
+background:rgba(255,94,168,.15);
+
+cursor:pointer;
+
+transition:.35s;
+
+animation:heartbeat 1.3s infinite;
+
+}
+
+#heartGame:hover{
+
+transform:scale(1.15);
+
+}
+
+
+/* ==========================
+   Ending
+========================== */
+
+.ending{
+
+min-height:100vh;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
+
+}
+
+.ending h1{
+
+font-family:"Great Vibes";
+
+font-size:90px;
+
+color:var(--pink);
+
+margin-bottom:25px;
+
+text-shadow:0 0 25px rgba(255,94,168,.5);
+
+}
+
+.ending h2{
+
+font-size:34px;
+
+margin-bottom:25px;
+
+}
+
+.ending p{
+
+max-width:650px;
+
+line-height:2;
+
+color:#ddd;
+
+font-size:18px;
+
+}
+
+
+/* ==========================
+   Music Button
+========================== */
+
+#music{
+
+position:fixed;
+
+right:25px;
+
+bottom:25px;
+
+width:65px;
+
+height:65px;
+
+border-radius:50%;
+
+background:linear-gradient(
+
+135deg,
+
+var(--pink),
+
+var(--purple)
+
+);
+
+color:white;
+
+font-size:28px;
+
+box-shadow:0 0 25px rgba(255,94,168,.45);
+
+z-index:999;
+
+}
+
+#music:hover{
+
+transform:rotate(180deg) scale(1.1);
+
+}
+
+
+/* ==========================
+   Fade
+========================== */
+
+.fade{
+
+opacity:0;
+
+transform:translateY(80px);
+
+transition:1s;
+
+}
+
+.fade.show{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+
+/* ==========================
+   Shooting Stars
+========================== */
+
+.shooting-stars{
+
+position:fixed;
+
+inset:0;
+
+overflow:hidden;
+
+pointer-events:none;
+
+z-index:-1;
+
+}
+
+
+/* ==========================
+   Canvas
+========================== */
+
+#confetti{
+
+position:fixed;
+
+inset:0;
+
+pointer-events:none;
+
+z-index:9999;
+
+}
+
+
+/* ==========================
+   Pulse
+========================== */
+
+@keyframes pulse{
+
+0%{
+
+transform:scale(1);
+
+}
+
+50%{
+
+transform:scale(1.08);
+
+}
+
+100%{
+
+transform:scale(1);
+
+}
+
+}
+
+
+/* ==========================
+   Floating Heart
+========================== */
+
+@keyframes floatHeart{
+
+0%{
+
+transform:translateY(120vh) scale(.6);
+
+opacity:0;
+
+}
+
+20%{
+
+opacity:1;
+
+}
+
+100%{
+
+transform:translateY(-120vh) scale(1.4);
+
+opacity:0;
+
+}
+
+}
+
+
+/* ==========================
+   Heart Beat
+========================== */
+
+@keyframes heartbeat{
+
+0%{
+
+transform:scale(1);
+
+}
+
+20%{
+
+transform:scale(1.2);
+
+}
+
+40%{
+
+transform:scale(.95);
+
+}
+
+60%{
+
+transform:scale(1.2);
+
+}
+
+100%{
+
+transform:scale(1);
+
+}
+
+}
+
+
+/* ==========================
+   Gift Shake
+========================== */
+
+@keyframes giftShake{
+
+0%{
+
+transform:rotate(0deg);
+
+}
+
+20%{
+
+transform:rotate(4deg);
+
+}
+
+40%{
+
+transform:rotate(-4deg);
+
+}
+
+60%{
+
+transform:rotate(3deg);
+
+}
+
+80%{
+
+transform:rotate(-3deg);
+
+}
+
+100%{
+
+transform:rotate(0deg);
+
+}
+
+}
+
+
+/* ==========================
+   Cake Bounce
+========================== */
+
+@keyframes bounce{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-15px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+
+
+ /* ==========================
+   Move Stars
+========================== */
+
+@keyframes moveStars{
+
+    from{
+        background-position:0 0;
+    }
+
+    to{
+        background-position:0 800px;
+    }
+
+}
+
+/* ==========================
+   Hover Glow
+========================== */
+
+button:hover,
+.photos img:hover,
+#heartGame:hover,
+.giftBox:hover{
+
+filter:brightness(1.05);
+
+}
+
+
+/* ==========================
+   Fade Transition
+========================== */
+
+section{
+
+transition:1s ease;
+
+}
+
+
+/* ==========================
+   Balloon Decoration
+========================== */
+
+.balloon{
+
+position:absolute;
+
+width:60px;
+
+height:80px;
+
+border-radius:50%;
+
+animation:balloonFloat linear infinite;
+
+opacity:.85;
+
+}
+
+.balloon::after{
+
+content:"";
+
+position:absolute;
+
+width:2px;
+
+height:80px;
+
+background:white;
+
+left:50%;
+
+top:80px;
+
+transform:translateX(-50%);
+
+}
+
+.red{
+
+background:#ff5e8a;
+
+}
+
+.blue{
+
+background:#6bbdff;
+
+}
+
+.yellow{
+
+background:#ffd166;
+
+}
+
+.purple{
+
+background:#a56eff;
+
+}
+
+
+/* ==========================
+   Fireworks Background
+========================== */
+
+.firework{
+
+position:absolute;
+
+width:6px;
+
+height:6px;
+
+border-radius:50%;
+
+background:white;
+
+animation:explode 1s ease-out forwards;
+
+}
+
+
+/* ==========================
+   Animation
+========================== */
+
+@keyframes balloonFloat{
+
+0%{
+
+transform:translateY(120vh);
+
+opacity:0;
+
+}
+
+10%{
+
+opacity:1;
+
+}
+
+100%{
+
+transform:translateY(-130vh);
+
+opacity:0;
+
+}
+
+}
+
+
+@keyframes explode{
+
+0%{
+
+transform:scale(.2);
+
+opacity:1;
+
+}
+
+100%{
+
+transform:scale(20);
+
+opacity:0;
+
+}
+
+}
+
+
+/* ==========================
+   Responsive
+========================== */
+
+@media(max-width:992px){
+
+.intro h1{
+
+font-size:70px;
+
+}
+
+.gallery h2,
+.reasons h2,
+.game h2{
+
+font-size:48px;
+
+}
+
+.photos{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.photos img{
+
+height:250px;
+
+}
+
+.ending h1{
+
+font-size:65px;
+
+}
+
+}
+
+
+@media(max-width:768px){
+
+section{
+
+padding:90px 0;
+
+}
+
+.intro{
+
+padding:25px;
+
+}
+
+.intro h1{
+
+font-size:52px;
+
+}
+
+.intro h3{
+
+font-size:15px;
+
+}
+
+#typing{
+
+font-size:16px;
+
+}
+
+.giftBox{
+
+transform:scale(.9);
+
+}
+
+.photos{
+
+grid-template-columns:1fr;
+
+}
+
+.photos img{
+
+height:260px;
+
+}
+
+.envelope{
+
+padding:25px;
+
+}
+
+.paper h2{
+
+font-size:42px;
+
+}
+
+.paper p{
+
+font-size:15px;
+
+line-height:1.9;
+
+}
+
+.reasons li{
+
+padding:18px;
+
+}
+
+.ending h1{
+
+font-size:48px;
+
+}
+
+.ending h2{
+
+font-size:24px;
+
+}
+
+.ending p{
+
+font-size:16px;
+
+}
+
+#music{
+
+width:55px;
+
+height:55px;
+
+font-size:22px;
+
+right:15px;
+
+bottom:15px;
+
+}
+
+}
+
+
+@media(max-width:480px){
+
+.intro h1{
+
+font-size:42px;
+
+}
+
+#giftBtn{
+
+width:100%;
+
+padding:16px;
+
+}
+
+.gift h2{
+
+font-size:36px;
+
+}
+
+.gallery h2,
+
+.reasons h2,
+
+.game h2{
+
+font-size:38px;
+
+}
+
+#cake{
+
+font-size:100px;
+
+}
+
+#heartGame{
+
+width:75px;
+
+height:75px;
+
+font-size:38px;
+
+}
+
+}
+
+
+/* ==========================
+   Selection
+========================== */
+
+::selection{
+
+background:var(--pink);
+
+color:white;
+
+}
+
+
+/* ==========================
+   Smooth Image Loading
+========================== */
+
+img{
+
+display:block;
+
+max-width:100%;
+
+}
+
+
+/* ==========================
+   END OF STYLE.CSS ❤️
+========================== */
